@@ -1,0 +1,197 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #002855;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Grid for Index */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #002855;
+}
+
+/* Centrar título principal */
+.centered-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #002855;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de descripción con fondo */
+.description-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-image: url('img/fondo1.jpg'); /* Reemplaza con tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.description-container .image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #002855;
+}
+
+.description-container .text {
+    color: #fff;
+}
+
+/* Generalidades */
+.generalidades-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.generalidades-horizontal .card {
+    background: white;
+    border: 1px solid #002855;
+    border-radius: 10px;
+    padding: 1rem;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.generalidades-horizontal .card img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Lista de Áreas de Desempeño */
+.performance-list {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.performance-list li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.performance-list li::marker {
+    color: #002855;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #002855;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsiveness */
+/* Móviles (pantallas hasta 600px) */
+@media (max-width: 600px) {
+    .description-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .description-container .image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .generalidades-horizontal {
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablets (pantallas entre 600px y 1200px) */
+@media (min-width: 600px) and (max-width: 1200px) {
+    .description-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .generalidades-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Escritorio (pantallas mayores a 1200px) */
+@media (min-width: 1200px) {
+    .description-container {
+        flex-direction: row;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
